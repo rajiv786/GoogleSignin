@@ -13,11 +13,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-const corsOptions ={
-	origin:'*', 
-	credentials:true,            //access-control-allow-credentials:true
-	optionSuccessStatus:200,
- }
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  })
+);
 
 app.use("/auth", authRoutes);
 
