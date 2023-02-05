@@ -15,7 +15,7 @@ app.use(passport.session());
 
 app.use(
   cors({
-    origin: "https://checkhb.netlify.app",
+    origin: "[https://checkhb.netlify.app,http://localhost:3000]",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
