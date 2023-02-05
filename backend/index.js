@@ -13,13 +13,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(
-  cors({
-    origin: "[https://checkhb.netlify.app,http://localhost:3000]",
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,
-  })
-);
+const corsOptions ={
+	origin:'*', 
+	credentials:true,            //access-control-allow-credentials:true
+	optionSuccessStatus:200,
+ }
 
 app.use("/auth", authRoutes);
 
