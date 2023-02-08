@@ -23,6 +23,8 @@ passport.use(
     },
     function (accessToken, refreshToken, profile, done) {
       done(null, profile);
+      console.log(profile,'aa');
+      console.log(accessToken,'aa');
     }
   )
 );
