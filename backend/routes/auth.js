@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-const CLIENT_URL = "http://localhost:3000";
-const CLIENT_UL = "http://localhost:3000";
+const CLIENT_URL = "https://checkhb.netlify.app";
+const CLIENT_UL = "https://checkhb.netlify.app";
 
 router.get("/login/success", (req, res) => {
   if (req.user) {
@@ -32,7 +32,7 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: 'http://localhost:3000/services',
+    successRedirect: 'https://checkhb.netlify.app/services',
     failureRedirect: "/login/failed",
   })
 );
